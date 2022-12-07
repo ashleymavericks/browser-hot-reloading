@@ -12,7 +12,12 @@ arel can be used to implement development-only hot-reload for non-Python files t
 arel watches changes over a set of files. When a file changes, arel notifies the browser (using WebSocket), and an injected client script triggers a page reload. You can register your own reload hooks for any extra server-side operations, such as reloading cached content or re-initializing other server-side resources.
 
 ## Installation guide
-1. Install dependencies
+1. Clone the repo
+```bash
+git clone https://github.com/ashleymavericks/browser-hot-reloading.git
+```
+
+2. Install dependencies
 ```bash
 pipenv install
 ```
@@ -20,15 +25,15 @@ or
 ```bash
 pip install -r requirements.txt
 ```
-2. Set environment variable in your shell instance
+1. Set environment variable in your shell instance
 ```bash
 export DEBUG=True
 ```
-3. Verify it using
+1. Verify it using
 ```bash
 echo $DEBUG
 ```
-4. Test this implementation, and further include it in your projects for a better development experience with Python ASGI web frameworks
+1. Test this implementation, and further include it in your projects for a better development experience with Python ASGI web frameworks
 
 ## LICENSE
 This project is licensed under the MIT license
