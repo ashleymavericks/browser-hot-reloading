@@ -5,6 +5,12 @@
  Implementaion of lightweight browser hot-reloading for Python ASGI web apps frameworks like FastAPI using [arel](https://github.com/florimondmanca/arel)
 </div><br>
 
+## What is arel?
+arel can be used to implement development-only hot-reload for non-Python files that are not read from disk on each request. This may include HTML templates, GraphQL schemas, cached rendered Markdown content, etc.
+
+## How does arel work?
+arel watches changes over a set of files. When a file changes, arel notifies the browser (using WebSocket), and an injected client script triggers a page reload. You can register your own reload hooks for any extra server-side operations, such as reloading cached content or re-initializing other server-side resources.
+
 ## Installation guide
 1. Install dependencies
 ```bash
@@ -23,11 +29,6 @@ export DEBUG=True
 echo $DEBUG
 ```
 4. Test this implementation, and further include it in your projects for a better development experience with Python ASGI web frameworks
-## What is arel?
-arel can be used to implement development-only hot-reload for non-Python files that are not read from disk on each request. This may include HTML templates, GraphQL schemas, cached rendered Markdown content, etc.
-
-## How does arel work?
-arel watches changes over a set of files. When a file changes, arel notifies the browser (using WebSocket), and an injected client script triggers a page reload. You can register your own reload hooks for any extra server-side operations, such as reloading cached content or re-initializing other server-side resources.
 
 ## LICENSE
 This project is licensed under the MIT license
